@@ -14,11 +14,16 @@ class BandInput extends Component {
         })
     }
 
+    handleSubmit = event => {
+      event.preventDefault()
+      this.props.manageBand
+    }
+
     render() {
       return(
         <div>
           <h3>Band Input</h3>
-          <form>
+          <form onSubmit={event => this.handleSubmit(event)}>
             <input onChange={event => this.handleChange(event)} type='text' value={this.state.name} />
             <input type="submit" />
           </form>
@@ -27,13 +32,4 @@ class BandInput extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    manageBand
-    // manageBand: () => {
-    //   dispatch(manageBand())
-    // }
-  };
-};
-
-export default connect(mapDispatchToProps)(BandInput);
+export default connect(null, { manageBand })(BandInput);
