@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BandInput from '../components/BandInput';
+// QUESTION: Why do I not need to import the reducer file? 
 // import manageBand from '../reducers/manageBand';
 
 class BandsContainer extends Component {
